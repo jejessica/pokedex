@@ -17,9 +17,8 @@ export class ListComponent implements OnInit {
   }
 
   get pkmSprite() {
-    const number = `000${this.selectedPkm.number}`.slice(-3);
-    console.log(number);
-    return `https://serebii.net/sunmoon/pokemon/${number}.png`;
+    const id = `000${this.selectedPkm.number}`.slice(-3);
+    return `https://serebii.net/sunmoon/pokemon/${id}.png`;
   }
 
   constructor(private pokeapiService: PokeapiService) { }
@@ -30,7 +29,6 @@ export class ListComponent implements OnInit {
 
   selectPokemon(pkm) {
     this.selectedPkm = pkm;
-    console.log(pkm);
   }
 
 }
